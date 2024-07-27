@@ -1,0 +1,21 @@
+# Ignore all
+*
+
+!/**/
+
+# Unignore all with extensions
+!*.*
+
+#Ignore files after C++ compilation
+*.o
+*.out
+*~
+
+#Unignore makefiles
+!Makefile
+!makefile
+# Unignore all dirs
+#!*/
+
+# Ignore vscode directory
+/.vscode
