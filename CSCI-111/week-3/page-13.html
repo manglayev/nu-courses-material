@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          h3
+          {
+            font-weight: normal;
+            color: blue;
+          }
+          p
+          {
+            font-style: italic;
+            color: coral;
+          }
+        </style>
+    </head>
+    <body>
+      <h3>
+        This should have its styled font-weight (normal) and color (blue)
+      </h3>
+      <p>Just some text</p>
+      <hr>
+      <h3 style="font-weight: revert; color: revert;">
+        This should have its original font-weight (bold) and color: black
+      </h3>
+      <p>Just some text</p>
+      <hr>
+      <h3 style="font-weight: unset; color: unset;">
+        This will still have font-weight: normal, but color: black
+      </h3>
+      <p style="font-style: unset; color: unset;">Just some text</p>
+      <hr>
+    </body>
+</html>
