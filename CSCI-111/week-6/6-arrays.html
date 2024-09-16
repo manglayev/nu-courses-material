@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>JS Tutorial Arrays</h1>
+    <p id="course_1"></p>
+    <p id="course_2"></p>
+    <p id="course_3"></p>
+    <p id="course_4"></p>
+    <p id="course_5"></p>
+    <p id="course_6"></p>
+    <p id="course_7"></p>
+    <p id="course_8"></p>
+    <p id="course_9"></p>
+    <p id="course_10"></p>
+    <p id="course_11"></p>
+    <p id="course_12"></p>
+    <p id="course_13"></p>
+    <p id="course_14"></p>
+    <p id="course_15"></p>
+<p id="course_16"></p>
+<p id="course_17"></p>
+    <a href="https://www.w3schools.com/js/js_reserved.asp">JS Reserved Keywords</a>
+  </body>
+  <script type="text/javascript">
+    let array_1 = ["Tom", 25, 30];
+    document.getElementById("course_1").innerText = array_1;
+    document.getElementById("course_2").innerText = array_1[1];
+    array_1[1] = 37;
+    array_1.push("Married");
+    document.getElementById("course_3").innerText = array_1;
+    delete array_1[2];
+    document.getElementById("course_4").innerText = array_1;
+    array_1.shift();
+    document.getElementById("course_5").innerText = array_1;
+    array_1.push("Olzhas");
+    document.getElementById("course_6").innerText = array_1;
+    let a = array_1.indexOf(undefined);
+    document.getElementById("course_7").innerText = a;
+    let b = array_1.indexOf(",");
+    document.getElementById("course_8").innerText = b;
+    let c = array_1.length;
+    document.getElementById("course_9").innerText = c;
+    array_1.push(array_1.shift());
+    document.getElementById("course_10").innerText = array_1;
+    document.getElementById("course_11").innerText = array_1[0];
+    array_1.shift();
+    document.getElementById("course_12").innerText = array_1;
+    array_1.push(array_1.shift());
+    document.getElementById("course_13").innerText = array_1;
+    document.getElementById("course_14").innerText = array_1[0];
+    document.getElementById("course_15").innerText = array_1[array_1.length - 1];
+
+    const array_2 = ["Tom", 25, 30];
+    //const vari_1 = "Text";
+    //vari_1 = "Text but other";
+    array_2[0] = "Not Tom";
+    array_2 = ["Not Tom", 25, 30];
+    document.getElementById("course_15").innerText = array_2[0];
+	
+
+
+    /*
+
+		comments for several lines
+    */
+  </script>
+  <script type="text/javascript">
+  </script>
+</html>

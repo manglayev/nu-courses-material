@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Objects</h1>
+    <div>
+        <p id="staffParagraph">
+            first name: <span id="firstName1"></span><br>
+            last name: <span id="lastName1"></span><br>
+            age: <span id="age1"></span><br>
+            role: <span id="role1"></span><br>
+            <input type="button" value="update role" onclick="updateRole()">
+        </p>
+        <p id="studentParagraph">
+            first name: <span id="firstName2"></span><br>
+            last name: <span id="lastName2"></span><br>
+            age: <span id="age2"></span><br>
+            role: <span id="role2"></span><br>
+            <input type="button" value="update role" onclick="updateRole()">
+        </p>
+    </div>    
+</body>
+<script>
+    const user1 = {firstName: "Timur", lastName: "Kairat", age: 33, role: "Staff"}
+    document.getElementById("firstName1").innerHTML = user1.firstName;
+    document.getElementById("lastName1").innerHTML = user1.lastName;
+    document.getElementById("age1").innerHTML = user1.age;
+    document.getElementById("role1").innerHTML = user1.role;
+    
+    const user2 = {firstName: "Dastan", lastName: "Zhenis", age: 23, role: "Student"}
+    document.getElementById("firstName2").innerHTML = user2.firstName;
+    document.getElementById("lastName2").innerHTML = user2.lastName;
+    document.getElementById("age2").innerHTML = user2.age;
+    document.getElementById("role2").innerHTML = user2.role;
+
+    document.getElementById("staffParagraph").style.backgroundColor = "lightblue";
+    document.getElementById("studentParagraph").style.backgroundColor = "yellow";
+    function updateRole()
+    {
+      user1["role"] = "Student";
+      document.getElementById("role1").innerHTML = user1.role;
+      document.getElementById("staffParagraph").style.backgroundColor = "yellow";
+    }
+</script> 
+</html>

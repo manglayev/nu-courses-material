@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <img id="changeImage" src="original.jpg" width="30%" alt="Original Image">
+  </div>
+  <button onclick="changeImageSrc()">Change Image Source</button>
+  <script>
+    function changeImageSrc()
+    {
+      document.getElementById('changeImage').src = 'new.jpg';
+      document.getElementById('changeImage').alt = 'New Image';
+    }
+  </script>
+</body>
+</html>

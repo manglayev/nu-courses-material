@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <style>
+    #changeStyle
+    {
+      color: blue;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <p id="changeStyle">This is a styled paragraph.</p>
+  <button onclick="changeStyle()">Change Style</button>
+  <script>
+    function changeStyle()
+    {
+      var element = document.getElementById('changeStyle');
+      element.style.color = 'red';
+      element.style.fontSize = '20px';
+    }
+  </script>
+</body>
+</html>
