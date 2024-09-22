@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Week 7 Example</title>
+  </head>
+  <body>
+    <div>
+      <input type="number" id="input1" size=2 placeholder="coefficient a">
+      <input type="number" id="input2" size=2 placeholder="coefficient b">
+      <input type="number" id="input3" size=2 placeholder="coefficient c">
+      <input type="button" id="button1" value="find x1 and x2" onclick="function1()">
+      <p>D: <span id="resultD"></span></p>
+      <p>x1: <span id="result1"></span></p>
+      <p>x2: <span id="result2"></span></p>
+    <div>
+  </body>
+  <script type="text/javascript">
+    function function1()
+    {
+      //x2 - 4x - 5 = 0
+      let a = document.getElementById('input1').value;
+      let b = document.getElementById('input2').value;
+      let c = document.getElementById('input3').value;
+      let D = discriminant(a, b, c);
+      if(D < 0)
+      {
+        document.getElementById('resultD').innerHTML = D;
+        document.getElementById('result1').innerHTML = "There is no 'x' to be found";
+        document.getElementById('result2').innerHTML = "";
+      }
+      else if(D == 0)
+      {
+        document.getElementById('resultD').innerHTML = D;
+
+        let rootOfDiscriminant = Math.sqrt(D);
+        x = (-b +rootOfDiscriminant)/(2*a);
+        document.getElementById('result1').innerHTML = x;
+        document.getElementById('result2').innerHTML = "There is only one 'x' to be found";
+      }
+      else if(D > 0)
+      {
+        document.getElementById('resultD').innerHTML = D;
+        let rootOfDiscriminant = Math.sqrt(D);
+        x1 = (-b +rootOfDiscriminant)/(2*a);
+        x2 = (-b -rootOfDiscriminant)/(2*a);
+        document.getElementById('result1').innerHTML = x1;
+        document.getElementById('result2').innerHTML = x2;
+      }
+    }
+    function discriminant(a, b, c)
+    {
+      return square(b) - 4 * a * c;
+    }
+    function square(coefficient_b)
+    {
+      return coefficient_b * coefficient_b;
+    }
+  </script>
+</html>

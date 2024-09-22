@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Week 7 Example</title>
+  </head>
+  <body>
+    <div>
+      <p>Please enter a number between 10 and 20</p>
+      <input type="text" id="input1" size=2 placeholder="11">
+      <input type="button" id="button1" value="Guess!" onclick="guessNumber()">
+      <p id="result1"></p>
+    <div>
+  </body>
+  <script type="text/javascript">
+    function guessNumber()
+    {
+      const hiddenNumber = 17;
+      let enteredNumber = document.getElementById('input1').value;
+      if(enteredNumber >= 10 && enteredNumber <= 20)
+      {
+        if(hiddenNumber > enteredNumber)
+        {
+          document.getElementById('result1').innerHTML = "The hidden number is larger";
+        }
+        if(hiddenNumber < enteredNumber)
+        {
+          document.getElementById('result1').innerHTML = "The hidden number is smaller";
+        }
+        if(hiddenNumber == enteredNumber)
+        {
+          document.getElementById('result1').innerHTML = "Congratulations! You have guessed the hidden number!";
+        }
+      }
+      else
+      {
+        document.getElementById('result1').innerHTML = "The entered number number is out of range";
+      }
+    }
+  </script>
+</html>
