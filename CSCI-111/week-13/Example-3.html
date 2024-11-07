@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-3</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>    
+<div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+<script>
+const number_of_rooms = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 5, 6, 7]
+const price_per_room = [12, 16, 17, 19, 22, 24, 28, 36, 41, 44]
+let points = []
+for(let i = 0; i < number_of_rooms.length; i++)
+{
+    points[i] = [number_of_rooms[i], price_per_room[i]]
+}
+function drawChart()
+{
+    var data = new google.visualization.DataTable()
+    data.addColumn('number', 'number of rooms')
+    data.addColumn('number', 'price per room')
+    data.addRows(points)
+    var options =
+    {
+        title: 'House Prices vs. Rooms',
+        hAxis: {title: 'Number of rooms' },
+        vAxis: {title: 'Price in millions'},
+        legend: 'none',
+        trendlines: {0: {}, 1: {}}
+    };    
+    var chart = new google.visualization.ScatterChart(document.getElementById('myChart'));
+    chart.draw(data, options);
+}
+google.load('visualization', '1', {packages:['corechart'], callback: drawChart});
+</script>
+</body>
+</html>
