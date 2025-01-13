@@ -8,7 +8,6 @@ public class ArraySumTask extends RecursiveTask<Double>
   double [] array;
 
   public static int SEQUENTIAL_THRESHOLD = 100;
-
   ArraySumTask(int start, int end, double[] array)
   {
     this.start = start;
