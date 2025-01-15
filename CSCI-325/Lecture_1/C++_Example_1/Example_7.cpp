@@ -3,13 +3,13 @@
 #include <vector>
 #define SIZE 10
 
-void sum(const int& parameter_1, const int& parameter_2, int array_2)
+void sum(const int& parameter_1, const int& parameter_2, int array_2[SIZE])
 {
-    //std::cout<<"concurrent jthread: "<<parameter_1<<"; "<<parameter_2<<"!\n";
     for (int i{0}; i < SIZE; i++)
     {
-        std::cout<<i<<"\n";
-    } 
+        std::cout<<array_2[i]<<" ";
+    }
+    std::cout<<"\n";
 }
 
 int main()
@@ -24,6 +24,6 @@ int main()
         array_1[i] = i;
     } 
 
-    std::jthread thread_1(sum, parameter_1, parameter_2, *array_1);
+    std::jthread thread_1(sum, parameter_1, parameter_2, array_1);
     std::cout<<"Main thread end !\n";
 }

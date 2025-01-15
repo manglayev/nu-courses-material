@@ -4,7 +4,7 @@
 
 void hello(const int& id)
 {
-    std::cout<<"concurrent jthread: "<<id<<" with id: "<<std::this_thread::get_id()<<"!\n";    
+    std::cout<<"concurrent jthread: "<<id<<" with id: "<<std::this_thread::get_id()<<"!\n";
 }
 
 int main()
