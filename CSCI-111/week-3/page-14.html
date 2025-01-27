@@ -2,18 +2,28 @@
 <html>
     <head>
         <style>
-        h1
-        {
-          color: green !important ;
-        }
-        h1
+        span
         {
           color: blue;
+          border: 1px solid black;
+        }
+        .extra > span
+        {
+          color: inherit;
         }
         </style>
     </head>
     <body>
-      <div id="div-1">
-        <h1 style="color: red">The end</h1>
+      <div>
+        Here is <span>a span element</span> which is blue, as span elements are set to be.
       </div>
+
+      <div class="extra" style="color:green">
+        Here is <span>a span element</span> which is green, because it inherits from its parent.
+      </div>
+
+      <div style="color:red">
+        Here is <span>a span element</span> which is blue, as span elements are set to be.
+      </div>
+    </body>
 </html>

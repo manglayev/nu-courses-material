@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          /*turns the color of all the text inside div to red*/
+          div
+          {
+            color: red;
+          }
+          /*turns the color of all the text inside paragraph within div to green*/
+          div p
+          {
+            color: green;
+          }
+          /*turns the color of all the span elements to yellow*/
+          span
+          {
+            color: yellow;
+          }
+          /*
+          turns the color of all the elements with class span-1 and span-4 to inherit from the parent element
+          i.e. as paragraph, which is green
+          */
+          .span-1, .span-4
+          {
+            color:inherit;
+          }
+          /*
+          turns the color of all the elements with class span-4 within paragraphs to black
+          */
+          p > .span-4
+          {
+            color: black;
+          }
+          /*
+          turns the color of all the elements with classes span-2 and span-3 to blue
+          */
+          .span-2, .span-3
+          {
+            color:blue;
+          }
+          h1
+          {
+            color:aqua;
+          }
+        </style>
+    </head>
+    <body>
+      <h1 style="color: unset">Texts with different cases of inheritance</h1>
+      <div>
+        <h3>
+          H3 text 1
+        </h3>
+        <p>Just <span class="span span-1">span</span> texts 1</p>
+      </div>
+      <hr>
+      <div>
+        <h3>
+          H3 text 2
+        </h3>
+        <p>Just <span class="span span-2">span</span> texts 2</p>
+      </div>
+      <hr>
+      <div>
+        <h3>
+          H3 text 3
+        </h3>
+          <!--
+          Unsets the color of all the elements with class span-3:
+          First the rule checks whether elements inherit the style and applies it,
+          otherwise sets initial values
+          -->
+        <p>Just <span class="span span-3" style="color: unset">span</span> texts 3</p>
+      </div>
+      <hr>
+      <div>
+        <h3>
+          H3 text 4
+        </h3>
+          <!--
+          Unsets the color of all the elements with class span-3:
+          First the rule checks whether elements inherit the style and applies it,
+          otherwise sets initial values
+          -->
+        <p>Just <span class="span span-4" style="color: unset">span</span> texts 4</p>
+      </div>
+      <hr>
+      <div>
+        <h3>
+          H3 text 5
+        </h3>
+        <p>Just <span class="span span-5">span</span> texts 5</p>
+      </div>
+      <hr>
+    </body>
+</html>

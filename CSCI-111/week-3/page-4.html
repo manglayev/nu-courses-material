@@ -14,20 +14,45 @@
             {
                 font-size: X-large;
             }
+            p[style]
+            {
+                color:blueviolet;
+            }
+            li
+            {
+                font-size: xx-large;
+                color:brown;
+            }
+            li[name]
+            {
+                font-size: larger;
+                color:aqua;
+            }
+            li[name="proverb-5"]
+            {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: xxx-large;
+                color:black;
+            }
         </style>
     </head>
     <body>
         <h1>English Proverbs</h1>
         <h2>or</h2>
         <h3>Proverbs in English</h3>
-        <p class="englishProverbs">Honesty is the best policy</p>
+        <p style="border-style: solid;" class="englishProverbs">Honesty is the best policy</p>
         <p class="englishProverbs">Learn to walk before you run</p>
         <p class="englishProverbs">The early bird catches the worm</p>
+        <p class="englishProverbs">Actions speak louder than words</p>
         <h1>Kazakh Proverbs</h1>
         <h2>or</h2>
         <h3>Kazakh proverbs in English</h3>
-        <p class="kazakh_proverbs">If there was no spring, there would be no river</p>
-        <p class="kazakh_proverbs">A good medicine tastes bitter</p>
-        <p class="kazakh_proverbs">Haste makes waste</p>
+        <ul>
+            <li>If there was no spring, there would be no river</li>
+            <li>A good medicine tastes bitter</li>
+            <li name="proverb-3">Haste makes waste</li>
+            <li name="proverb-4">A man is a guest in this life</li>
+            <li name="proverb-5">The history of land is the history of its people.</li>
+        </ul>
     </body>
 </html>

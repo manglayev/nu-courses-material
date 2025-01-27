@@ -2,6 +2,18 @@
 <html>
     <head>
         <style>
+          div li
+          {
+            font-size: large;
+          }
+          div > h2
+          {
+            color: green;
+          }
+          body > h2
+          {
+            color: darkblue;
+          }
           .area > li
           {
             color: orange;
@@ -11,6 +23,26 @@
             color: red;
           }
           .cities > li
+          {
+            color: blue;
+          }
+          /* unvisited link */
+          a:link
+          {
+            color: red;
+          }
+          /* visited link */
+          a:visited
+          {
+            color: green;
+          }
+          /* mouse over link */
+          a:hover
+          {
+            color: hotpink;
+          }
+          /* selected link */
+          a:active
           {
             color: blue;
           }
@@ -63,11 +95,11 @@
           <li>Osaka</li>
         </ol>
       <div>
-      <h3>Resources:</h3>
-      <a href="https://www.worldometers.info/geography/largest-countries-in-the-world/">Largest Countries in the World (by area)</a>
-      <br>
-      <a href="https://www.worldometers.info/world-population/population-by-country/">Countries in the world by population</a>
-      <br>
-      <a href="https://worldpopulationreview.com/world-cities">World City Populations</a>
+      <h2>Resources:</h2>
+      <ul>
+        <li><a href="https://www.worldometers.info/geography/largest-countries-in-the-world/">Largest Countries in the World (by area)</a></li>
+        <li><a href="https://www.worldometers.info/world-population/population-by-country/">Countries in the world by population</a></li>
+        <li><a href="https://worldpopulationreview.com/world-cities">World City Populations</a></li>
+      </ul>
     </body>
 </html>

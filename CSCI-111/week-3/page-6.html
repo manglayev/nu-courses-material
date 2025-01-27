@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>            
-            h2, h3
-            {
-                color: purple;
-            }
-            .englishProverbs
-            {
-                font-size: large;
-            }
-            p.kazakh_proverbs
-            {
-                font-size: X-large;
-            }
-            p[style]
-            {
-                color:blueviolet;
-            }
-            li
-            {
-                font-size: xx-large;
-                color:brown;
-            }
-            li[name]
-            {
-                font-size: larger;
-                color:aqua;
-            }
-            li[name="proverb-5"]
-            {
-                font-family: 'Courier New', Courier, monospace;
-                font-size: xx-large;
-                color:black;
-            }
-            #Fourth
-            {
-                font-family: 'Courier New', Courier, monospace;
-                font-size: xx-large;
-                color:#0ff939;
-            }
+        <style>
+          div li
+          {
+            font-size: large;
+          }
+          div > h2
+          {
+            color: green;
+          }
+          body > h2
+          {
+            color: darkblue;
+          }          
+          .area > li
+          {
+            color: orange;
+          }
+          .population > li
+          {
+            color: red;
+          }
+          .cities > li
+          {
+            color: blue;
+          }
         </style>
     </head>
     <body>
-        <h1>English Proverbs</h1>
-        <h2>or</h2>
-        <h3>Proverbs in English</h3>
-        <p style="border-style: solid;" class="englishProverbs">Honesty is the best policy</p>
-        <p class="englishProverbs">Learn to walk before you run</p>
-        <p class="englishProverbs">The early bird catches the worm</p>
-        <p id="Fourth" class="englishProverbs">Actions speak louder than words</p>
-        <h1>Kazakh Proverbs</h1>
-        <h2>or</h2>
-        <h3>Kazakh proverbs in English</h3>
-        <ul>
-            <li>If there was no spring, there would be no river</li>
-            <li>A good medicine tastes bitter</li>
-            <li name="proverb-3">Haste makes waste</li>
-            <li name="proverb-4">A man is a guest in this life</li>
-            <li name="proverb-5">The history of land is the history of its people.</li>
-        </ul>
+      <h1>Global Rankings</h1>
+      <div id="div-1">
+        <h2>Ranking of countries by area</h2>
+        <ol class="countries area">
+          <li>Russia</li>
+          <li>Canada</li>
+          <li>China</li>
+          <li>United States</li>
+          <li>Brazil</li>
+          <li>Australia</li>
+          <li>India</li>
+          <li>Argentina</li>
+          <li>Kazakhstan</li>
+          <li>Algeria</li>
+        </ol>
+      </div>
+      <div id="div-2">
+        <h2>Ranking of countries by population</h2>
+        <ol class="countries population">
+          <li>India</li>
+          <li>China</li>
+          <li>United States</li>
+          <li>Indonaesia</li>
+          <li>Pakistan</li>
+          <li>Nigeria</li>
+          <li>Brazil</li>
+          <li>Bangladesh</li>
+          <li>Russia</li>
+          <li>Mexico</li>
+        </ol>
+      </div>
+      <div id="div-3">
+        <h2>Ranking of cities by population</h2>
+        <ol class="cities population">
+          <li>Tokyo</li>
+          <li>Delhi</li>
+          <li>Shanghai</li>
+          <li>Dhaka</li>
+          <li>Sao Paulo</li>
+          <li>Cairo</li>
+          <li>Mexico City</li>
+          <li>Beijing</li>
+          <li>Mumbai</li>
+          <li>Osaka</li>
+        </ol>
+      </div>
+      <h2>Resources:</h2>
+      <ul>
+        <li><a href="https://www.worldometers.info/geography/largest-countries-in-the-world/">Largest Countries in the World (by area)</a></li>
+        <li><a href="https://www.worldometers.info/world-population/population-by-country/">Countries in the world by population</a></li>
+        <li><a href="https://worldpopulationreview.com/world-cities">World City Populations</a></li>
+      </ul>
     </body>
 </html>

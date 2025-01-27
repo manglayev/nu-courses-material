@@ -2,19 +2,24 @@
 <html>
     <head>
         <style>
-        #last
-        {
-          color: blue;
-        }
-        body p:last-child
-        {
-          color: green;
-        }
+          /*p > span has more weigh as it has two element selectors p and span*/
+          p > span
+          {
+            color: red;
+          }
+          /*span has less weigh as it has only one element selectors span*/
+          span
+          {
+            color: blue;
+          }
         </style>
     </head>
     <body>
-      <p>
-        <span id="last">This text is going to be tested</span>
-      </p>
+      <div>
+        <p>Here is <span>a span element</span> inside a paragraph within a div.</p>
+      </div>
+      <div>
+        <p>Here is <span>another span element</span> inside another paragraph within another div.</p>
+      </div>      
     </body>
 </html>

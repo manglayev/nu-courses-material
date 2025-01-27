@@ -2,6 +2,18 @@
 <html>
     <head>
         <style>
+          div li
+          {
+            font-size: large;
+          }
+          div > h2
+          {
+            color: green;
+          }
+          body > h2
+          {
+            color: darkblue;
+          }
           .area > li
           {
             color: orange;
@@ -34,7 +46,32 @@
           {
             color: blue;
           }
-
+          /* countries that are met in both rankings */
+          /*Russia*/
+          .area > li:first-child, .countries.population > li:nth-child(9)
+          {
+            color: purple;
+          }
+          /*China*/
+          .area > li:nth-child(3), .countries.population > li:nth-child(2)
+          {
+            color: coral;
+          }
+          /*USA*/
+          .area > li:nth-child(4), .countries.population > li:nth-child(3)
+          {
+            color: DarkSlateGrey;
+          }
+          /*Brazil*/
+          .area > li:nth-child(5), .countries.population > li:nth-child(7)
+          {
+            color: Indigo;
+          }
+          /*India*/
+          .area > li:nth-child(7), .countries.population > li:first-child
+          {
+            color: Maroon;
+          }          
         </style>
     </head>
     <body>
@@ -84,11 +121,10 @@
           <li>Osaka</li>
         </ol>
       <div>
-      <h3>Resources:</h3>
-      <a href="https://www.worldometers.info/geography/largest-countries-in-the-world/">Largest Countries in the World (by area)</a>
-      <br>
-      <a href="https://www.worldometers.info/world-population/population-by-country/">Countries in the world by population</a>
-      <br>
-      <a href="https://worldpopulationreview.com/world-cities">World City Populations</a>
+      <ul>
+        <li><a href="https://www.worldometers.info/geography/largest-countries-in-the-world/">Largest Countries in the World (by area)</a></li>
+        <li><a href="https://www.worldometers.info/world-population/population-by-country/">Countries in the world by population</a></li>
+        <li><a href="https://worldpopulationreview.com/world-cities">World City Populations</a></li>
+      </ul>
     </body>
 </html>
