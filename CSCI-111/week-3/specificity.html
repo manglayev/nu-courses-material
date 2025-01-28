@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+
+		/*Specificity: ID-Class-Element*/
+		p{color:blue;} /*001*/
+		p{color:green;} /*001*/
+
+		p span{color:yellow;} /*002*/
+		p,span{color:red;}  /*001 each*/
+
+		
+		p span::selection{color:green;} /*002*/
+		span::selection{color:pink;} /*001*/
+
+		
+		span.styledEl{color:gray;} /*011*/
+		.styledEl{color:orange} /*010*/
+
+		
+		span#mySpan{color:yellow;} /*101*/
+		#mySpan{color:green;} /*100*/
+
+
+	</style>
+</head>
+<body>
+
+	<h1><span>H</span>eading1</h1>
+
+	<p>Paragraph 1<span id="mySpan" class="styledEl"> words inside paragraph 1 </span></p>
+	<p>Paragraph 1</p>
+	<p class="styledEl">Paragraph 1</p>
+
+
+
+</body>
+</html>

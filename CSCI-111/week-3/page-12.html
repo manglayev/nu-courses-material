@@ -2,26 +2,30 @@
 <html>
     <head>
         <style>
-          .list-1
-          {
-            font-size: x-large;
-          }
+          /*This rule has weight 0 0 1 and it does not work. It clashes with the rule above.*/
           ul
           {
             font-size: small;
           }
-          ul li:last-child
+          /*This rule has weight 0 1 2 and it works.*/
+          /* ul li:last-child
           {
             color: blue;
-          }
-          li:last-child
+          } */
+          /*This rule has weight 0 1 1 and it does not work. It clashes with the rule above.*/
+          /* li:last-child
           {
             color: yellow;
-          }
+          } */
+          /*This rule has weight 0 1 1 and it works for the first list item North, but it does not work for the last item West*/
+          /*
           li[name]
           {
             color: red;
           }
+          */
+          /*This rule has weight 0 0 1 and it works for the second and the third items. 
+            It loses for the first and the last items North and West respectively. It clashes with the rules above.*/
           li
           {
             color: green;
@@ -32,7 +36,7 @@
       <h2>specificity middle weight</h2>
       <ul class="list-1">
         <li id="item-1-li" name="item-1">North</li>
-        <li>South</li>
+        <li class="list-2">South</li>
         <li>East</li>
         <li name="item-4">West</li>
       </ul>
