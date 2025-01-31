@@ -2,28 +2,31 @@
 <html>
     <head>
         <style>
+          /*This rule has weight 0 1 0 and it works. It overcomes the rule below.*/
+          .list-1
+          {
+            font-size: xx-large;
+          }
           /*This rule has weight 0 0 1 and it does not work. It clashes with the rule above.*/
           ul
           {
-            font-size: small;
+            font-size: xx-small;
           }
           /*This rule has weight 0 1 2 and it works.*/
-          /* ul li:last-child
+          ul li:last-child
           {
             color: blue;
-          } */
+          }
           /*This rule has weight 0 1 1 and it does not work. It clashes with the rule above.*/
-          /* li:last-child
+          li:last-child
           {
             color: yellow;
-          } */
-          /*This rule has weight 0 1 1 and it works for the first list item North, but it does not work for the last item West*/
-          /*
+          }
+          /*This rule has weight 0 1 1 and it works for the first list item North, but it does not work for the last item West*/          
           li[name]
           {
             color: red;
-          }
-          */
+          }          
           /*This rule has weight 0 0 1 and it works for the second and the third items. 
             It loses for the first and the last items North and West respectively. It clashes with the rules above.*/
           li

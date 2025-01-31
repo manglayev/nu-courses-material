@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
+  <head>
+      <style>
+        .div-2
+        {
+          color: green;
+        }
+        .div-3
+        {
+          color: red;
+        }
         span
         {
           color: blue;
           border: 1px solid black;
         }
-        .extra > span
+        .div-2 > span
         {
           color: inherit;
         }
-        </style>
-    </head>
-    <body>
-      <div>
-        Here is <span>a span element</span> which is blue, as span elements are set to be.
+      </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="div-1">
+        The color of div-1 is black and the color of <span>span is blue</span>.
       </div>
 
-      <div class="extra" style="color:green">
-        Here is <span>a span element</span> which is green, because it inherits from its parent.
+      <div class="div-2">
+        The color of div-2 is green and the color of <span>span is green</span>.
+        This span inherits the color of parent element (div) with class div-2.
       </div>
 
-      <div style="color:red">
-        Here is <span>a span element</span> which is blue, as span elements are set to be.
+      <div class="div-3">
+        The color of div-3 is red and the color of <span>span is blue</span>.
       </div>
-    </body>
+    </div>
+  </body>
 </html>

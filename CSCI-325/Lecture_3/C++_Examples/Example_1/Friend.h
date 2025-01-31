@@ -17,7 +17,7 @@ class Friend
                 std::cout<<name<<": "<<bower.getName()<<" bowed to me!\n";
                 bower.bowBack(*this);
             }
-             m_cv.notify_one();
+            //m_cv.notify_one();
         }
         void bowBack(Friend &bower)
         {
@@ -25,7 +25,7 @@ class Friend
                 std::unique_lock dataLock{m_mutex};
                 std::cout<<name<<": "<<bower.getName()<<" bowed back to me!\n";
             }
-            m_cv.notify_one();
+            //m_cv.notify_one();
         }
         std::string getName()
         {

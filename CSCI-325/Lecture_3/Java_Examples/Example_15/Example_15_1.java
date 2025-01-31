@@ -15,17 +15,15 @@ public class Example_15_1 extends Thread
       {
         value++;
         System.out.println("Thread "+id+" changed the value to "+value);
-
         try
         {
             Thread.sleep(100);
-            //Example_15_Main.sharedObject.wait(100);
+            Example_15_Main.sharedObject.wait(100);
         }
         catch (InterruptedException e)
         {
             e.printStackTrace();
         }
-
       }
     }
   }
