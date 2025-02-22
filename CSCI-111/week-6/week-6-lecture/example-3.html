@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="example-1.js"></script>
-    <script>
-        console.log("Dr. Talgat Manglayev")
-        console.log("Dr. Irina Dolzhikova")
-        console.log("MSc. Marat Isteleyev")
-    </script>
+    <title>Example-3</title>
 </head>
 <body>
     <h1>CSCI-111 Web Programming and Problem Solving</h1>
     <h2>Part II Introduction to Programming using JavaScript</h2>
     <h3>week-6-lecture JavaScript Basics</h3>
-    <h4>Example-1</h4>
-    <p>Adding JavaScript to the file</p>
+    <h4 id="exampleHeader">Example-1</h4>
 </body>
+<script>
+    document.getElementById("exampleHeader").innerHTML = "Example-2"
+    let page = document.getElementById("exampleHeader").innerHTML
+    console.log(page)
+</script>
 </html>
