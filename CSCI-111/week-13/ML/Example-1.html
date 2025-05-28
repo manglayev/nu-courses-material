@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Chart</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div id="myChart" style="width:100%; max-width:700px; height:500px;"></div>
+    <script>
+        google.charts.load('current',{packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart()
+        {
+            // Set Data
+            const data = google.visualization.arrayToDataTable
+            ([
+                ['Price', 'Curve', 'Line'],
+                [1,16,15],[2,19,20],[3,24,25],[4,30,30],[5,36,35],[6,41, 40],[7,44, 45]
+            ]);
+            // Set Options
+            const options =
+            {
+                title: 'Price of house per rooms',
+                hAxis: {title: 'Number of Rooms'},
+                vAxis: {title: 'Price in Millions'},
+                legend: 'Yes'
+            };
+            // Draw
+            const chart = new google.visualization.LineChart(document.getElementById('myChart'));
+            chart.draw(data, options);
+        }
+        </script>
+</body>
+</html>

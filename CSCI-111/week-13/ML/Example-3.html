@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-3</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div id="myChart-1" style="width:33%; float:left; max-width:600px; height:500px;"></div>    
+    <div id="myChart-3" style="width:33%; float:left; max-width:600px; height:500px;"></div>
+    <div id="myChart-4" style="width:33%; float:left; max-width:600px; height:500px;"></div>    
+    <div><p><h1 style="text-align: center;">predicted price per 4 room apartment: <span id="predicted_price_per_4_room_apartment"></span></h1></p></div>
+</body>
+<script>
+    //data
+    const number_of_rooms = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 5, 6, 7]
+    const price_per_room =  [12, 16, 17, 19, 22, 24, 28, 36, 41, 44]
+    var points = []
+    for(let i = 0; i < number_of_rooms.length; i++)
+    {
+        points[i] = [number_of_rooms[i], price_per_room[i], 'point {size: 3; shape-type: dot; fill-color: red}']
+    }        
+    function rmse(labels, predictions)
+    {
+        let n = labels.length
+        let differences = []
+        let square_differences = 0
+        for(let i = 0; i < predictions.length; i++)
+        {
+            differences[i] =  labels[i] - predictions[i]
+        }
+        for(let i = 0; i < predictions.length; i++)
+        {
+            square_differences +=  differences[i] * differences[i]
+        }
+        mean_square_differences = square_differences/n
+        root_mean_square_differences = Math.sqrt(mean_square_differences)
+        return root_mean_square_differences
+    }
+    corrected_prices = []
+
+    //linear function
+    function linear_regression(features, labels, learning_rate = 0.01, epochs = 50, lyambda = 0.01)
+    {
+        let base_price_random_in_range = Math.floor(Math.random())
+        //console.log("base_price_random_in_range = " + base_price_random_in_range)
+        let price_per_room_random_in_range = Math.floor(Math.random())
+        //console.log("price_per_room_random_in_range = " + price_per_room_random_in_range)
+        errors = []
+        let predicted_prices = []
+        for (let i = 0; i < epochs; i++)
+        {
+            for(let j = 0; j < features.length; j++)
+            {
+                predicted_prices[j] = price_per_room_random_in_range * features[j] + base_price_random_in_range
+            }
+            rmse_value = rmse(labels, predicted_prices)
+            errors.push([i, rmse_value])
+            let index = Math.floor(Math.random() * features.length)
+            //console.log("index = " + index)            
+            //square trick start            
+            // Calculate error (true price - predicted price)
+            let error = labels[index] - predicted_prices[index]
+            // Update base price and price per room using gradient descent
+            base_price_random_in_range += learning_rate * error
+            price_per_room_random_in_range += learning_rate * error * features[index]
+            //square trick end
+            //regularization start
+            price_per_room_random_in_range = price_per_room_random_in_range * (1 - lyambda)
+            //regularization end
+            price_per_4_rooms = base_price_random_in_range + price_per_room_random_in_range * 4
+            //console.log("bp = "+base_price_random_in_range+"; s = "+price_per_room_random_in_range+"; 4r = "+price_per_4_rooms)
+            corrected_prices.push([0, base_price_random_in_range, number_of_rooms[index], predicted_prices[index]])
+        }        
+        price_per_4_rooms = price_per_room_random_in_range * 4 + base_price_random_in_range
+        document.getElementById("predicted_price_per_4_room_apartment").innerHTML = price_per_4_rooms
+        
+        google.charts.load('current',{packages:['corechart']})
+        google.charts.setOnLoadCallback(drawChart)
+        
+        google.charts.load('current',{packages:['corechart']})
+        google.charts.setOnLoadCallback(drawChart_4)
+                
+        google.charts.load('current',{packages:['corechart']})
+        google.charts.setOnLoadCallback(drawLines)        
+    }
+    linear_regression(number_of_rooms, price_per_room)
+    function drawChart()
+    {
+        var data = new google.visualization.DataTable()
+        data.addColumn('number', 'number of rooms')
+        data.addColumn('number', 'price per room')
+        data.addColumn({ type: 'string', role: 'style' })
+        data.addRows(points)
+        //console.log(prices)        
+        var options =
+        {
+            title: 'House Prices vs. Rooms',
+            hAxis: {title: 'Number of rooms' },
+            vAxis: {title: 'Price in millions'},
+            legend: 'none',
+            trendlines: {0: {color:'green', lineWidth: 2}},
+            series:{0:{color:'red', type: 'scatter', pointSize:3}}
+        }        
+        var chart = new google.visualization.ComboChart(document.getElementById('myChart-1'));
+        chart.draw(data, options);
+    }
+
+    points_2 = []
+    for(let i = 0; i < number_of_rooms.length; i++)
+    {
+        points_2[i] = [number_of_rooms[i], price_per_room[i]]
+    }
+    function drawLines()
+    {
+        var data = new google.visualization.DataTable()
+        data.addColumn('number', 'number of rooms')        
+        for (let i = 0; i < corrected_prices.length; i++)
+        {
+            data.addColumn('number', 'predicted price per variant with rooms'+ i)
+        }
+        rows = []
+        row_0 = []
+        row_0[0] = 0
+        for(let i = 0; i < corrected_prices.length; i++)
+        {
+            row_0[i+1] = corrected_prices[i][1]
+        }        
+        rows[0] = row_0
+        row_1 = []
+        row_1[0] = corrected_prices[0][2]
+        for (let i = 0; i < corrected_prices.length; i++)
+        {            
+            row_1[i+1] = corrected_prices[i][3]            
+        }
+        rows[1] = row_1
+        data.addRows(rows)
+        var options =
+        {
+            title: 'House Prices vs. Rooms',
+            hAxis: {title: 'Number of rooms' },
+            vAxis: {title: 'Price in millions'},
+            legend: 'none',
+        };    
+        var chart = new google.visualization.LineChart(document.getElementById('myChart-3'))
+        chart.draw(data, options);
+    }
+    function drawChart_4()
+    {
+        var data = new google.visualization.DataTable()
+        data.addColumn('number', 'epochs')
+        data.addColumn('number', 'error size')
+        data.addRows(errors)
+        var options =
+        {
+            title: 'House Prices vs. Rooms',
+            hAxis: {title: 'epochs' },
+            vAxis: {title: 'errors'},
+            legend: 'none'
+        };    
+        var chart = new google.visualization.ScatterChart(document.getElementById('myChart-4'))
+        chart.draw(data, options);
+    }
+</script>
+</html>
