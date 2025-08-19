@@ -1,0 +1,1 @@
+nvcc -arch=sm_70 -o first-parallel 02-first-parallel/01-first-parallel.cu -run

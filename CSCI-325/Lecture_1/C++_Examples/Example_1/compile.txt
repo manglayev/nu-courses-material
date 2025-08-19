@@ -1,1 +1,0 @@
-g++ -std=c++20 Example_1.cpp -o a1
