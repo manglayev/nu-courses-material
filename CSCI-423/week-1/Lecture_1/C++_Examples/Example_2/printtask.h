@@ -1,7 +1,7 @@
 // Fig. 17.3: printtask.h
 // Function printTask defines a task to perform in a separate thread.
 #include <chrono>
-#include <format> 
+// #include <format> 
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -15,27 +15,24 @@ std::string id() {
 }
 
 // task to perform in a separate thread 
-void printTask(const std::string& name, 
-   std::chrono::milliseconds sleepTime) {
-
+void printTask(const std::string& name, std::chrono::milliseconds sleepTime)
+{
    // <chrono> library features we'll use for timing
    using std::chrono::steady_clock;
    using std::chrono::duration_cast;
    using std::chrono::milliseconds;
 
-   std::cout << std::format("{} (ID {}) going to sleep for {} ms\n",
-      name, id(), sleepTime.count());
-
+   //std::cout << std::format("{} (ID {}) going to sleep for {} ms\n", name, id(), sleepTime.count());
+   std::cout << name << " (ID " << id() << ") going to sleep for " << sleepTime.count() << " ms\n";
    auto startTime{steady_clock::now()}; // get current time
-
    // put thread to sleep for sleepTime milliseconds 
-   std::this_thread::sleep_for(sleepTime); 
+   std::this_thread::sleep_for(sleepTime);
 
    auto endTime{steady_clock::now()}; // get current time
    auto time{duration_cast<milliseconds>(endTime - startTime)};
    auto difference{duration_cast<milliseconds>(time - sleepTime)};
-   std::cout << std::format("{} (ID {}) awakens after {} ms ({} + {})\n",
-      name, id(), time.count(), sleepTime.count(), difference.count());
+   //std::cout << std::format("{} (ID {}) awakens after {} ms ({} + {})\n", name, id(), time.count(), sleepTime.count(), difference.count());
+   std::cout << name << " (ID "<< id() << ") awakens after " << time.count() << " ms (" << sleepTime.count()<< " + " <<difference.count() << ")"<< std::endl;
 }
 
 

@@ -1,7 +1,7 @@
 // Fig. 17.4: printtask.cpp
 // Concurrently executing tasks with std::jthreads.
 #include <chrono>
-#include <format>
+//#include <format>
 #include <iostream>
 #include <random>
 #include <string>
@@ -20,10 +20,11 @@ int main() {
    std::cout << "STARTING JTHREADS\n";
 
    // start two jthreads
-   for (int i{1}; i < 3; ++i) {
+   for (int i{1}; i < 3; ++i)
+   {
       std::chrono::milliseconds sleepTime{ints(engine)};
-      std::string name{std::format("Task {}", i)};
-
+      //std::string name{std::format("Task {}", i)};
+      std::string name{"Task "+ i};
       // create a jthread that calls printTask, passing name and sleepTime
       // as arguments and store the jthread, so it is not destructed until
       // the vector goes out of scope at the end of main; each jthread's
