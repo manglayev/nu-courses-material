@@ -6,21 +6,24 @@
 #include <iostream>
 #include <string>
 
-class UnsynchronizedBuffer {
-public:
+class UnsynchronizedBuffer
+{
+   public:
    // place value into buffer
-   void put(int value) {
+   void put(int value)
+   {
       std::cout << std::format("Producer writes\t{:2d}", value);
       m_buffer = value;
    }
 
    // return value from buffer
-   int get() const {
+   int get() const
+   {
       std::cout << std::format("Consumer reads\t{:2d}", m_buffer);
       return m_buffer;
    }
-private:
-   int m_buffer{-1}; // shared by producer and consumer threads
+   private:
+      int m_buffer{-1}; // shared by producer and consumer threads
 };
 
 
