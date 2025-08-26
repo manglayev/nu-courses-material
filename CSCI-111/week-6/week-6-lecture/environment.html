@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slides
+        {
+            float: left;
+            width: 44%;
+        }
+        #sourcecode
+        {
+            float: left;
+            width: 44%;
+        }
+        #examples
+        {
+            float: left;
+            width: 11%;
+        }
+    </style>
+    <script>
+        function showHome()
+        {
+            document.getElementById("directory").src = "../week-6-lecture/"
+        }
+    </script>
+</head>
+<body>
+    <button id="home" onclick="showHome()">show directory</button>
+    <br>
+    <div id="slides">
+        <iframe src="week-6-lecture.pdf" width = 100% height="600px"></iframe>
+    </div>
+    <div id="sourcecode">
+        <iframe id="directory" src="../week-6-lecture/" width="100%" height="600px"></iframe>
+    </div>
+    <div id="examples">
+        <iframe id="directory" src="../week-6-lecture/" width="100%" height="600px"></iframe>
+    </div>
+</body>
+</html>

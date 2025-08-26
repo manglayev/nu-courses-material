@@ -1,10 +1,10 @@
 #include "Police.h"
 #include "Criminal.h"
+#include <thread>
 
 void Police::giveRansom(Criminal &criminal)
 {
     {
-        std::unique_lock<std::mutex> dataLock{m_mutex};
         while (!criminal.isHostageReleased())
         {
             std::cout << "Police: waiting criminal to release hostage!\n";

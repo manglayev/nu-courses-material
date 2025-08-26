@@ -1,0 +1,4 @@
+compile:
+    g++ -std=c++20 test-1.c -o test-1
+compile into assembly:
+    g++ -std=c++20 -S test-1.c

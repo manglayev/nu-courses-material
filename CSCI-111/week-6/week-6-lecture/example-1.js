@@ -1,0 +1,1 @@
+console.log("output in the console from the external JS")
