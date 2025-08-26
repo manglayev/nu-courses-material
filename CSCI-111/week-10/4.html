@@ -52,12 +52,11 @@ On the lowly pane it falls.
         }
         function author2()
         {
-            const div1 = document.getElementById("div-1");
-            const authorsInDiv1 = div1.getElementsByTagName("h1");
-            console.log("authors in div 1: "+authorsInDiv1.length);
-            //div1.getElementsByTagName("h1")[1].innerHTML = "Abay Kunanbayev";
+            const authors = document.getElementsByTagName("h1");
+            console.log("authors : "+authors.length);
+            //document.getElementsByTagName("h1")[1].innerHTML = "Abay Kunanbayev";
             //or
-            authorsInDiv1[1].innerHTML = "Abay Kunanbayev";
+            authors[1].innerHTML = "Abay Kunanbayev";
         }
         function author3()
         {
