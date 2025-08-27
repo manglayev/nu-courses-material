@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Example-10. For Loop</title>
+    <script>
+      let i = 0;
+      array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      while( i < array.length)
+      {
+        i++;
+        if(i == 4)
+        {
+          continue;
+        }
+        console.log("Floor number "+i);
+        if(i == 8)
+        {
+          break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p id="loopResult"></p>
+  </body>
+</html>

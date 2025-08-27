@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Week 7 Example</title>
+  </head>
+  <body>
+    <div>
+      <input type="number" id="input1" placeholder="enter some number">
+      <input type="button" id="button1" value="multiply" onclick="buttonClick()">
+      <p>Result of function multiplyByTwo: <span id="result1"></span></p>
+      <p>Result of function multiplyByThree: <span id="result2"></span></p>
+    <div>
+  </body>
+  <script type="text/javascript">
+    function buttonClick()
+    {
+      const enteredNumber = document.getElementById('input1').value;
+      let x2 = multiplyByTwo(enteredNumber);
+      let x3 = multiplyByThree(enteredNumber);
+      document.getElementById('result1').innerHTML = x2;
+      document.getElementById('result2').innerHTML = x3;
+    }
+    function multiplyByTwo(a)
+    {
+      return a * 2;
+    }
+    const multiplyByThree = function(a)
+    {
+      return a * 3;
+    }
+  </script>
+</html>

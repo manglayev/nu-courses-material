@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript Week 7 Example</title>
+  </head>
+  <body>
+    <div>
+      <p>Scope of the variables</p>
+    <div>
+  </body>
+  <script type="text/javascript">
+    const globalVariable = "GLOBAL VARIABLE";
+    console.log("Global Variable outside block and function: "+globalVariable);
+
+    {
+      let blockVariable = "BLOCK VARIABLE";
+      console.log("Global Variable in block: "+globalVariable);
+      console.log("Block Variable in block: "+blockVariable);
+    }
+
+    function function1()
+    {
+      const functionVariable = "FUNCTION VARIABLE";
+      functionVariable1 = "FUNCTION VARIABLE 1";
+      console.log("Global Variable in function: "+globalVariable);
+      console.log("Function Variable in function: "+functionVariable);
+      //console.log("Block Variable in function"+blockVariable);
+    }
+    function1();
+    console.log(globalVariable);
+    console.log(functionVariable1);
+    //console.log(functionVariable);
+    //console.log(blockVariable)
+  </script>
+</html>

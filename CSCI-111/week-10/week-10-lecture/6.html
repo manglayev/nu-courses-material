@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-6</title>
+</head>
+<body>
+<div id="div-1">
+<h1 id="p-1-author"></h1>
+<pre id="p-1-poem">
+To wisely live your life, you don't need to know much
+Just rememeber two main rules for the beginning:
+You better starve, than eat whatever
+And better be alone, than with whoever.
+</pre>
+<button onclick="author1()">author 1</button>
+<button onclick="year()">add year</button>
+<h1 id="p-2-author"></h1>
+<pre id="p-2-poem">
+Five things in life there are you should shun and ban.  
+Five other things there are that you should strive to gain,
+If you have made your aim to be a worthy man.
+And know - if you try hard your goals you will attain.
+</pre>
+<button onclick="author2()">author 2</button>
+</div>
+<div id="div-2">
+<h1 id="p-3-author" class="div-2-h1"></h1>
+<pre id="p-3-poem">
+My heart’s in the Highlands, my heart is not here;
+My heart’s in the Highlands, a-chasing the deer;
+A-chasing the wild deer, and following the roe,
+My heart’s in the Highlands wherever I go.
+</pre>
+<button onclick="author3()">author 3</button>
+<h1 id="p-4-author" class="div-2-h1"></h1></h1>
+<pre id="p-4-poem">
+Sable clouds by tempest driven,
+Snowflakes whirling in the gales,
+Hark—it sounds like grim wolves howling,
+Hark—now like a child it wails!
+Creeping through the rustling straw thatch,
+Rattling on the mortared walls,
+Like some weary wanderer knocking—
+On the lowly pane it falls.
+</pre>
+<button onclick="author4()">author 4</button>
+</div>
+<script>
+function author1()
+{
+    document.getElementById("p-1-author").innerHTML = "Omar Hayam";
+}
+function author2()
+{
+    const authors = document.getElementsByTagName("h1");
+    console.log("authors : "+authors.length);
+    //document.getElementsByTagName("h1")[1].innerHTML = "Abay Kunanbayev";
+    //or
+    authors[1].innerHTML = "Abay Kunanbayev";
+}
+function author3()
+{
+    //const authorsInDiv2 = document.getElementsByClassName("div-2-h1");
+    //authorsInDiv2[0].innerHTML = "Robert Burns";
+    //console.log("authors in div 2: "+authorsInDiv2.length);
+    //or
+    document.getElementsByClassName("div-2-h1")[0].innerHTML = "Robert Burns";
+}
+function author4()
+{
+    //document.querySelectorAll("#p-4-author")[0].innerHTML = "Alexander Pushkin";
+    //or
+    //document.querySelectorAll(".div-2-h1")[1].innerHTML = "Alexander Pushkin";
+    //or
+    document.querySelectorAll("h1")[3].innerHTML = "Alexander Pushkin";
+}
+function year()
+{    
+    //create element
+    let p = document.createElement("p");
+    // add text
+    p.innerText = "1120"
+    // append the p-element to the pre
+    const div1 = document.getElementById("div-1");
+    div1.getElementsByTagName("pre")[0].appendChild(p);
+}
+</script>
+</body>
+</html>
