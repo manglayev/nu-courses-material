@@ -1,7 +1,7 @@
 NVCC=nvcc
 CUDAFLAGS=-arch=sm_60
-CUDAFLAGS += -DCUBE
-#CUDAFLAGS += -DSQUARE
+#CUDAFLAGS += -DCUBE
+CUDAFLAGS += -DSQUARE
 RM=/bin/rm -f
 
 all: main

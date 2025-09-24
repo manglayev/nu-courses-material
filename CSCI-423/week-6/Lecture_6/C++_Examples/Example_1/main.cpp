@@ -4,7 +4,5 @@ int main()
 {
   int a = 1000;
   wrapperCaller(a);
-  wrapperCaller(a);
-  wrapperCaller(a);
   return 0;
 }

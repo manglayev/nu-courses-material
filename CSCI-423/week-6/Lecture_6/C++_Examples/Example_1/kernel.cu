@@ -1,7 +1,8 @@
 #include "kernel_header.cuh"
+
+#include <cuda_runtime.h>
 #include "device_launch_parameters.h"
 #include "cuda.h"
-#include <cuda_runtime.h>
 
 __global__ void cudaFunction(int *d)
 {
@@ -18,11 +19,21 @@ void wrapper(int c)
 {
   printf("BEFORE:\n");
   printf("c = %d;\n", c);
+
   int *dev_c;
-  cudaMallocManaged(&dev_c, sizeof(int));
-  dev_c[0] = c;
+  cudaMalloc((void**)&dev_c, sizeof(int));
+  cudaMemcpy(dev_c, &c, sizeof(int), cudaMemcpyHostToDevice);
+
   cudaFunction<<<BLOCKS, THREADS>>>(dev_c);
+  cudaError_t err_1;
+  err_1 = cudaGetLastError();
+  if (err_1 != cudaSuccess)
+  {
+      printf("Error: %s\n", cudaGetErrorString(err_1));
+  }
   cudaDeviceSynchronize();
+  cudaMemcpy(&c, dev_c, sizeof(int), cudaMemcpyDeviceToHost);
+  cudaFree(dev_c);
   printf("AFTER:\n");
-  printf("dev_c[%d] = %d;\n", 0, dev_c[0]);
+  printf("c = %d;\n", c);
 }
