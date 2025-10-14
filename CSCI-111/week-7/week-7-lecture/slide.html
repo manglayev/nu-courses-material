@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
+   <script>
         /*
-        CSCI-111 Web Programming and Problem Solving
+        	CSCI-111 Web Programming and Problem Solving
         */
         function week_7_lecture(session)
         {
             console.log("JavaScript Functions")
-        const instructors = ["Irina Dolzhikova", "Talgat Manglayev", "Aygerim Yessenbayeva"]
-        console.log(instructors[session - 1])
+        const instructors =
+                {
+                    section_1: "Dr. Irina Dolzhikova",
+                    section_2: "Dr. Talgat Manglayev",
+                    section_3: "Dr. Syed Muhammad Umair Arif"
+                }
+        console.log(instructors[session])
         }
-        
-        
-        week_7_lecture(2)
-        
+
+        week_7_lecture("section_2")
     </script>
+
 </head>
 <body>
     

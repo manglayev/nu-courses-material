@@ -7,25 +7,36 @@
   <body>
     <div>
       <p>Please enter a number between 1 and 10</p>
-      <input type="text" id="input1" maxlength="1" placeholder="1">
+      <input type="number" id="input1" min="1" max="10" placeholder="1">
       <input type="button" id="button1" value="Guess!" onclick="guessNumber()">
       <p id="result1"></p>
     <div>
   </body>
   <script type="text/javascript">
+    
+    //LOGIC ERROR
     function guessNumber()
     {
       const hiddenNumber = 4;
-      //const hiddenNumber = "4";
       let enteredNumber = document.getElementById('input1').value;
-      if(hiddenNumber !== enteredNumber)
+      let output = ""
+      if(hiddenNumber == enteredNumber)
       {
-        document.getElementById('result1').innerHTML = "The hidden number is not equal to the entered number";
+        output = "Congratulations! You have guessed the hidden number."
+        document.getElementById('result1').innerHTML = output;
       }
-      else
+      if(hiddenNumber > enteredNumber)
       {
-        document.getElementById('result1').innerHTML = "Congratulations! You have found the hidden number!";
+        output = "The hidden number is larger."
+        document.getElementById('result1').innerHTML = output;
       }
+      if(hiddenNumber < enteredNumber)
+      {
+        output = "The hidden number is smaller."
+        document.getElementById('result1').innerHTML = output;
+      }
+      document.getElementById('result1').innerHTML = output + " Try Again!";
     }
+    
   </script>
 </html>

@@ -10,28 +10,20 @@
     <div>
   </body>
   <script type="text/javascript">
-  let a = 10;
-  console.log("1: "+a);
-  function functionName()
-  {
-    a = a + 10;
-    console.log("2: "+a);
-    multiplyByTwo(a);
-    console.log("8: "+a);
-  }
-  function multiplyByTwo(a)
-  {
-    console.log("3: "+a);
-    a = a * 2;
-    console.log("4: "+a);
-    multiplyByThree(a);
-    console.log("7: "+a);
-  }
-  const multiplyByThree = function(a)
-  {
-    console.log("5: "+a);
-    a = a * 3;
-    console.log("6: "+a);
-  }
+    let object1 = {Degree:"MSc", Mode:"Teaching", Location:"UK", Ranking:"THE Top 50"};
+    console.log("1: "+object1.Mode);
+    function functionName()
+    {
+      object1.Mode = "Research";
+      console.log("2: "+object1.Mode);
+      changeObject(object1);
+      console.log("5: "+object1.Mode);
+    }
+    function changeObject(objectInChangeObject)
+    {
+      console.log("3: "+objectInChangeObject.Mode);
+      object1.Mode = "Teaching + Research";
+      console.log("4: "+objectInChangeObject.Mode);
+    }
   </script>
 </html>

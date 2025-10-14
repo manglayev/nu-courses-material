@@ -15,8 +15,9 @@
   <script type="text/javascript">
     function guessNumber()
     {
-      const hiddenNumber = "4";
+      const hiddenNumber = 4;
       let enteredNumber = document.getElementById('input1').value;
+
       if(hiddenNumber === enteredNumber)
       {
         document.getElementById('result1').innerHTML = "Congratulations! You have found the hidden number!";
@@ -25,6 +26,17 @@
       {
         document.getElementById('result1').innerHTML = "The hidden number is not equal to the entered number";
       }
+      //ALTERNATIVE CONDITION
+      /*
+      if(hiddenNumber !== enteredNumber)
+      {
+        document.getElementById('result1').innerHTML = "The hidden number is not equal to the entered number";
+      }
+      else
+      {
+        document.getElementById('result1').innerHTML = "Congratulations! You have found the hidden number!";
+      }
+      */
     }
   </script>
 </html>

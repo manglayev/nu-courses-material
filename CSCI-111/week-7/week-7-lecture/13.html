@@ -6,24 +6,31 @@
   </head>
   <body>
     <div>
-      <input type="button" id="button1" value="check arguments" onclick="functionName()">
+      <p>Scope of the variables</p>
     <div>
   </body>
   <script type="text/javascript">
-    let object1 = {Degree:"MSc", Mode:"Teaching", Location:"UK", Ranking:"THE Top 50"};
-    console.log("1: "+object1.Mode);
-    function functionName()
+    const globalVariable = "GLOBAL VARIABLE";
+    console.log("Global Variable outside block and function: "+globalVariable);
+
     {
-      object1.Mode = "Research";
-      console.log("2: "+object1.Mode);
-      changeObject(object1);
-      console.log("5: "+object1.Mode);
+      let blockVariable = "BLOCK VARIABLE";
+      console.log("Global Variable in block: "+globalVariable);
+      console.log("Block Variable in block: "+blockVariable);
     }
-    function changeObject(objectInChangeObject)
+
+    function function1()
     {
-      console.log("3: "+objectInChangeObject.Mode);
-      object1.Mode = "Teaching + Research";
-      console.log("4: "+objectInChangeObject.Mode);
+      const functionVariable = "FUNCTION VARIABLE";
+      functionVariable1 = "FUNCTION VARIABLE 1";
+      console.log("Global Variable in function: "+globalVariable);
+      console.log("Function Variable in function: "+functionVariable);
+      //console.log("Block Variable in function"+blockVariable);
     }
+    function1();
+    console.log(globalVariable);
+    console.log(functionVariable1);
+  //console.log(functionVariable);
+  //console.log(blockVariable)
   </script>
 </html>
