@@ -2,11 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Example-11. For Loop</title>
+    <title>Example-10. Break and Continue statements with While Loop</title>
     <script>
-      for(let i = 10; i > 0; i--)
+      let i = 0;
+      while(i < 10)
       {
-        console.log("i = "+i);
+        if(i == 4)
+        {
+          i++;
+          continue;
+        }        
+        if(i == 8)
+        {
+          break;
+        }
+        console.log(i + " Hello, World!")
+        i++;
       }
     </script>
   </head>
