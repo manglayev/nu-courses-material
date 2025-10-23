@@ -1,0 +1,6 @@
+nsys profile --stats=true -o vector-add-no-prefetch-report ./vector-add-no-prefetch
+
+nvcc -o vector-add-prefetch 01-vector-add/solutions/01-vector-add-prefetch-solution.cu -run
+
+nsys profile --stats=true -o vector-add-prefetch-report ./vector-add-prefetchls
+
