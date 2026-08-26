@@ -1,0 +1,4 @@
+gcc program-1.c -o p1
+gcc -S program-1.c -o p2
+read assembly code: objdump -d p1
+read binary code:  xxd -b p1
