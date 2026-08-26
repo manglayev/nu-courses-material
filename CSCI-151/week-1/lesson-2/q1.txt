@@ -1,0 +1,7 @@
+setvbuf(stdout, NULL, _IONBF,0);
+
+should we remember this line of code?
+
+Where we make suggestions to the exam format like asking to change format from paper based to compuer based with limited compliations
+
+in the textbook, there are topics like octals and hexadecimals as well as long and short int covered, should we focus on that too or rely mainly on the website?
