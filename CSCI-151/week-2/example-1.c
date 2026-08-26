@@ -13,8 +13,11 @@ Print the decimal, octal and hexademical of the nubmer-1.
 
 int main()
 {
-int number1 = 1234;
+int number_1 = 1234;
 
-printf("digit 1 = %d\n", number1%10);
+printf("digit 1 = %d\n", number_1%10);
+int number_2 = number_1 / 10;
+printf("digit 2 = %d\n", number_2%10);
+
 return 0;
 }
