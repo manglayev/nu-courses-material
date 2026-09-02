@@ -1,7 +1,0 @@
-Polya's principles
-
-Understand the problem you need to solve
-Determine what algorithms you need to solve
-Implement algorithms to solve
-Test your implementation (validation)
-If something is wrong, find where the problem might be and fix it (debugging)
