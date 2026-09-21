@@ -10,10 +10,10 @@ main: main.o wrapperCaller.o kernel.o
 main.o: main.cpp kernel_header.cuh
 	g++ -std=c++20 -c main.cpp
 
-wrapperCaller.o: wrapperCaller.cpp kernel_header.cuh
+wrapperCaller.o: wrapperCaller.cpp
 	g++ -std=c++20 -c wrapperCaller.cpp
 
-kernel.o: kernel.cu kernel_header.cuh
+kernel.o: kernel.cu
 	${NVCC} ${CUDAFLAGS} -std=c++20 -c kernel.cu
 
 clean:

@@ -57,9 +57,13 @@ int main()
   cudaMallocManaged(&b, size);
   cudaMallocManaged(&c, size);
 
-  cudaMemPrefetchAsync(a, size, deviceId);
-  cudaMemPrefetchAsync(b, size, deviceId);
-  cudaMemPrefetchAsync(c, size, deviceId);
+  cudaMemLocation locationGPU;
+  locationGPU.type = cudaMemLocationTypeDevice;
+  locationGPU.id = deviceId;
+  
+  cudaMemPrefetchAsync(a, size, locationGPU, 0, 0);
+  cudaMemPrefetchAsync(b, size, locationGPU, 0, 0);
+  cudaMemPrefetchAsync(c, size, locationGPU, 0, 0);
 
   size_t threadsPerBlock;
   size_t numberOfBlocks;
@@ -82,7 +86,15 @@ int main()
   asyncErr = cudaDeviceSynchronize();
   if(asyncErr != cudaSuccess) printf("Error: %s\n", cudaGetErrorString(asyncErr));
 
-  cudaMemPrefetchAsync(c, size, cudaCpuDeviceId);
+  cudaMemLocation locationCPU;
+  locationCPU.type = cudaMemLocationTypeHost;
+  locationCPU.id = deviceId;
+  
+  cudaMemPrefetchAsync(a, size, locationCPU, 0, 0);
+  cudaMemPrefetchAsync(b, size, locationCPU, 0, 0);
+  cudaMemPrefetchAsync(c, size, locationCPU, 0, 0);
+
+  cudaMemPrefetchAsync(c, size, locationCPU, 0, 0);
 
   checkElementsAre(7, c, N);
 

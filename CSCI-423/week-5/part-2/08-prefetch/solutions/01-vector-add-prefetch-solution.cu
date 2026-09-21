@@ -57,10 +57,14 @@ int main()
   cudaMallocManaged(&b, size);
   cudaMallocManaged(&c, size);
 
-  cudaMemPrefetchAsync(a, size, deviceId);
-  cudaMemPrefetchAsync(b, size, deviceId);
-  cudaMemPrefetchAsync(c, size, deviceId);
-
+  cudaMemLocation location;
+  location.type = cudaMemLocationTypeDevice;
+  location.id = deviceId;
+  
+  cudaMemPrefetchAsync(a, size, location, 0, 0);
+  cudaMemPrefetchAsync(b, size, location, 0, 0);
+  cudaMemPrefetchAsync(c, size, location, 0, 0);
+  
   size_t threadsPerBlock;
   size_t numberOfBlocks;
 
