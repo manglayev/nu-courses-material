@@ -3,7 +3,7 @@
 #include "cuda.h"
 #include <cuda_runtime.h>
 
-#define customDefinedFunction(a, b)(a*b/(THREADS));
+#define customDefinedFunction(a, b)((a*b)/(THREADS));
 void fillArray(float *b);
 using namespace std;
 
@@ -20,7 +20,7 @@ __global__ void globalFunction(float *dev_b)
   if(index == 0)
   {
     float a = customDefinedFunction(4, 16);
-    // after preprocessing -> float a = 4 * 16 / (32);
+    // after preprocessing -> float a = (4 * 16) / (32);
     printf("%.2f\n", a);
     int b = deviceFunction(4, 16);
     printf("%d\n", b);
