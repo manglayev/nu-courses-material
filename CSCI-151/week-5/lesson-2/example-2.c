@@ -42,7 +42,7 @@ int main()
 		if (decimalCharASCII >= '0' && decimalCharASCII <= '9')
 		{
 			decimalInt = decimalCharASCII - '0';
-
+			printf("decimalInt %d\n", decimalInt);
 			int b0 = decimalInt % 2;
     		decimalInt = decimalInt / 2;
 			
