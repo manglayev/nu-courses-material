@@ -1,0 +1,13 @@
+/*
+if there is one disk put from source to destination
+
+if there are two disks put
+	from source to spare
+	from source to destination
+	from spare to destination
+
+if there are three disks
+	put two from source to spare 
+	put one from source to destination
+	put two from spare to destination
+*/
