@@ -1,0 +1,6 @@
+1) sort function, which sorts array of ints
+2) search function, which searches for an int in array
+3) generate function, which initializes array
+4) test function which tests these functions
+5) main which calls these functions
+6) add variants to implement these functions with chars 
